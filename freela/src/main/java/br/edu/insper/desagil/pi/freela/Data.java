@@ -52,4 +52,21 @@ public class Data extends Momento {
             this.dia=ajusta(novoDia,1,31);
         }
     }
+
+    @Override
+    public Integer minutos(){
+        Integer minutos_qnt = 0;
+        Integer dif_ano = this.ano - 1970;
+
+        minutos_qnt = minutos_qnt + (dif_ano * 365 * 24 * 60);
+
+        Integer mes = this.mes;
+        while(mes > 1){
+            mes = mes -1;
+            Integer qnt_dias = limite.get(mes);
+            minutos_qnt = minutos_qnt+ (qnt_dias * 24 * 60);
+        }
+        minutos_qnt = minutos_qnt + ((this.dia-1)*24*60);
+        return minutos_qnt;
+    }
 }
