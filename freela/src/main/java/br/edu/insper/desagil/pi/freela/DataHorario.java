@@ -19,4 +19,18 @@ public class DataHorario extends Momento{
         return data;
     }
 
+    public void atualiza(int hora, int minuto){
+        this.hora = ajusta(hora,0,23);
+        this.minuto = ajusta(minuto,0,59);
+    }
+
+    @Override
+    public Integer minutos(){
+        Integer minutos_qnt = super.minutos();
+
+        minutos_qnt = minutos_qnt + (this.hora *60);
+        minutos_qnt = minutos_qnt + this.minuto;
+
+        return minutos_qnt;
+    }
 }
