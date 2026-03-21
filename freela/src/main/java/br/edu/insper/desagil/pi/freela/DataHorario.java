@@ -18,7 +18,9 @@ public class DataHorario extends Momento{
     public Data getData(){
         return data;
     }
-
+    public void setData(Data data){
+        this.data = data;
+    }
     public void atualiza(int hora, int minuto){
         this.hora = ajusta(hora,0,23);
         this.minuto = ajusta(minuto,0,59);
@@ -26,7 +28,7 @@ public class DataHorario extends Momento{
 
     @Override
     public Integer minutos(){
-        Integer minutos_qnt = super.minutos();
+        Integer minutos_qnt = this.data.minutos();
 
         minutos_qnt = minutos_qnt + (this.hora *60);
         minutos_qnt = minutos_qnt + this.minuto;

@@ -1,4 +1,4 @@
-public class Momento {
+public abstract class Momento {
 
     public Integer ajusta(int valor, int minimo, int maximo){
         if(valor < minimo){
@@ -10,7 +10,5 @@ public class Momento {
         }
     }
 
-    public Integer minutos(){
-        return 1;
-    }
+    public abstract Integer minutos();
 }

@@ -42,10 +42,11 @@ public class Data extends Momento {
         this.ano = ajusta(novoAno, 1970,2070);
         this.mes = ajusta(novoMes,1,12);
 
-        if(this.mes==2){
+        if(this.mes.equals(2)){
             this.dia=ajusta(novoDia,1,28);
         }
-        else if(this.mes==1 || this.mes==3 || this.mes==5 || this.mes==7 || this.mes==8 || this.mes==10 || this.mes==12){
+        else if(this.mes.equals(1) || this.mes.equals(3) || this.mes.equals(5) ||
+                this.mes.equals(7) || this.mes.equals(8) || this.mes.equals(10) || this.mes.equals(12)){
             this.dia=ajusta(novoDia,1,31);
         }
         else{
