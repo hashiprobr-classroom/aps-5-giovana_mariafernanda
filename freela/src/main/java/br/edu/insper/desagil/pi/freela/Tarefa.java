@@ -28,7 +28,7 @@ public class Tarefa {
         return fim;
     }
 
-    private void atualiza(Momento inicio, Momento fim){
+    public void atualiza(Momento inicio, Momento fim){
         if(inicio.minutos() >= fim.minutos()){
             throw new IllegalArgumentException("Erro: início deve ser antes do fim");
         }
